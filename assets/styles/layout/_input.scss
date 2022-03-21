@@ -1,0 +1,102 @@
+.checkbox {
+	display: flex;
+	input[type='checkbox'] {
+		height: 0;
+		width: 0;
+		opacity: 0;
+
+		+ label {
+			position: relative;
+			display: flex;
+			width: 100%;
+			justify-content: space-between;
+			margin: 0.65em 0;
+			align-items: center;
+			color: var(--primary-color);
+			transition: color 250ms cubic-bezier(0.4, 0, 0.23, 1);
+
+			.is-primary & {
+				color: var(--white-color);
+			}
+
+			> span {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin-right: $size-6/2;
+				width: $size-6;
+				height: $size-6;
+				background: transparent;
+				border: rem(1px) solid var(--primary-color);
+				border-radius: rem(3px);
+				cursor: pointer;
+				transition: all 250ms cubic-bezier(0.4, 0, 0.23, 1);
+
+				&.right {
+					margin-left: $size-6/2;
+					margin-right: 0;
+				}
+
+				.is-primary & {
+					border-color: var(--white-color);
+				}
+			}
+		}
+		&:checked {
+			+ label > span {
+				position: relative;
+				border: $size-6/2 solid var(--primary-color);
+				animation: shrink-bounce 200ms cubic-bezier(0.4, 0, 0.23, 1);
+
+				.is-primary & {
+					border-color: var(--white-color);
+				}
+
+				&:before {
+					content: '';
+					box-sizing: content-box;
+					position: absolute;
+					top: 0.5em;
+					left: 0.15em;
+					border-right: rem(3px) solid transparent;
+					border-bottom: rem(3px) solid transparent;
+					transform: rotate(45deg);
+					transform-origin: 0% 100%;
+					animation: checkbox-check 125ms 250ms cubic-bezier(0.4, 0, 0.23, 1)
+						forwards;
+
+					.is-primary & {
+						animation: checkbox-check-on-dark-background 125ms 250ms
+							cubic-bezier(0.4, 0, 0.23, 1) forwards;
+					}
+				}
+
+				&.right:before {
+					left: auto;
+					top: -0.15em;
+					right: 0.025em;
+				}
+			}
+		}
+	}
+
+	&.dropdown-item {
+		display: flex;
+
+		input[type='checkbox'] {
+			& + label {
+				margin: 0;
+			}
+
+			&:checked + label {
+				> span {
+					border: $size-6/2 solid var(--primary-color);
+					&:before {
+						top: 0.6em;
+						left: 0.2em;
+					}
+				}
+			}
+		}
+	}
+}

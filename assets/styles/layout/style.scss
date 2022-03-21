@@ -1,0 +1,11 @@
+/*
+*
+* Here we specify major components which define the streucture of the page
+* and generally dont repeat itself in the page. Like `header`, `footer`, `sidebar`, `body`
+*
+*/
+
+@import 'body';
+@import 'input';
+@import 'table';
+@import 'separator';

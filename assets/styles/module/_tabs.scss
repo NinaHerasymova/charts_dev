@@ -1,0 +1,23 @@
+.message {
+	.message-body {
+		.tabs.tabs {
+			li {
+				&.is-active {
+					a {
+						opacity: 1;
+						color: #fff;
+						background: var(--primary-color);
+						border-bottom-color: var(--primary-color);
+					}
+				}
+
+				a {
+					opacity: 0.7;
+					color: var(--black-color);
+					border-bottom-color: var(--black-color);
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,145 @@
+// loading for infinite scrolling on tables
+
+$circleCount: 12;
+$animationDuration: 1.2s;
+
+.circle-bounce {
+	width: $size-3;
+	height: $size-3;
+	position: relative;
+	margin: auto;
+
+	.child {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+
+		&:before {
+			content: '';
+			display: block;
+			margin: 0 auto;
+			width: 15%;
+			height: 15%;
+			background-color: var(--primary-color);
+			border-radius: 100%;
+			animation: bounce-delay $animationDuration infinite ease-in-out both;
+		}
+
+		@for $i from 2 through $circleCount {
+			&.circle-#{$i} {
+				transform: rotate((360deg / $circleCount * ($i - 1)));
+			}
+		}
+
+		@for $i from 2 through $circleCount {
+			&.circle-#{$i}:before {
+				animation-delay: (
+					-$animationDuration + $animationDuration / $circleCount * ($i - 1)
+				);
+			}
+		}
+	}
+}
+
+//normal loading
+
+.loading {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 50%;
+	width: 100px;
+	margin: auto;
+	transform: translateY(-50%);
+
+	span {
+		position: absolute;
+		height: 10px;
+		width: 84px;
+		top: 50px;
+		overflow: hidden;
+
+		> i {
+			position: absolute;
+			height: 4px;
+			width: 4px;
+			border-radius: 50%;
+			animation: wait 4s infinite;
+
+			&:nth-of-type(1) {
+				left: -28px;
+				background: $red-color;
+			}
+			&:nth-of-type(2) {
+				left: -21px;
+				animation-delay: 0.8s;
+				background: $blue-color;
+			}
+		}
+	}
+}
+
+//skeleton Loading on tables
+
+$rows: 10;
+$base-color: var(--white-color);
+$shine-color: var(--table-striped-row-color);
+$animation-duration: 1.6s;
+
+@mixin background-gradient {
+	background-image: linear-gradient(
+		90deg,
+		$base-color 0px,
+		$shine-color 40px,
+		$base-color 80px
+	);
+	background-size: rem(600px);
+}
+
+table.table-skeleton.table-skeleton {
+	th {
+		height: $size-2;
+	}
+	td {
+		padding: $size-7;
+	}
+	td > div,
+	thead abbr > div {
+		height: $size-7;
+		background-color: var(--white-color);
+		border-radius: 25px;
+		@include background-gradient;
+		animation: shine-avatar $animation-duration infinite linear;
+	}
+
+	&.is-hoverable tbody {
+		// put hover background as default
+		tr:not(.is-selected):hover {
+			background: transparent;
+		}
+		tr:not(.is-selected):hover:nth-child(even) {
+			background: var(--table-striped-row-color);
+		}
+	}
+}
+
+@keyframes shine-lines {
+	0% {
+		background-position: -100px;
+	}
+	40%,
+	100% {
+		background-position: 140px;
+	}
+}
+@keyframes shine-avatar {
+	0% {
+		background-position: -100px;
+	}
+	40%,
+	100% {
+		background-position: 140px;
+	}
+}

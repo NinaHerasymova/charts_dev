@@ -1,0 +1,63 @@
+.message.message {
+	border-radius: 0;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+	.message-header,
+	.message-body {
+		border-radius: 0;
+
+		p,
+		a.link {
+			font-weight: 400;
+
+			&.no-underline {
+				text-decoration: none;
+			}
+		}
+
+		a.link {
+			&:hover {
+				color: var(--red-color);
+			}
+		}
+
+		&__carName {
+			font-weight: 400;
+			white-space: nowrap;
+
+			div.tooltip {
+				top: calc(100% + #{$size-7});
+				left: calc(100% - #{$size-6});
+			}
+
+			&:hover {
+				cursor: pointer;
+				div.tooltip {
+					opacity: 1;
+					transform: scale(1);
+				}
+			}
+		}
+
+		.message-body {
+			color: var(--primary-color);
+			border: 0;
+		}
+
+		h6 {
+			&.heading__tooltip,
+			&.has-text-info {
+				div.tooltip {
+					top: -#{$size-6/2};
+					left: #{$size-4};
+				}
+				&:hover {
+					cursor: pointer;
+					div.tooltip {
+						opacity: 1;
+						transform: scale(1);
+					}
+				}
+			}
+		}
+	}
+}

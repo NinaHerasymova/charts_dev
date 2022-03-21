@@ -1,0 +1,108 @@
+// all fonts necessary here
+
+@include font-face(
+	'Montserrat',
+	'../../assets/fonts/Montserrat/Montserrat-Thin',
+	100,
+	null,
+	ttf
+);
+
+@include font-face(
+	'Montserrat',
+	'../../assets/fonts/Montserrat/Montserrat-ExtraLight',
+	200,
+	null,
+	ttf
+);
+
+@include font-face(
+	'Montserrat',
+	'../../assets/fonts/Montserrat/Montserrat-Light',
+	300,
+	null,
+	ttf
+);
+
+@include font-face(
+	'Montserrat',
+	'../../assets/fonts/Montserrat/Montserrat-Regular',
+	400,
+	null,
+	ttf
+);
+
+@include font-face(
+	'Montserrat',
+	'../../assets/fonts/Montserrat/Montserrat-Medium',
+	500,
+	null,
+	ttf
+);
+
+@include font-face(
+	'Montserrat',
+	'../../assets/fonts/Montserrat/Montserrat-SemiBold',
+	600,
+	null,
+	ttf
+);
+
+@include font-face(
+	'Montserrat',
+	'../../assets/fonts/Montserrat/Montserrat-Bold',
+	700,
+	null,
+	ttf
+);
+
+@include font-face(
+	'Montserrat',
+	'../../assets/fonts/Montserrat/Montserrat-ExtraBold',
+	800,
+	null,
+	ttf
+);
+
+@include font-face(
+	'Montserrat',
+	'../../assets/fonts/Montserrat/Montserrat-Black',
+	900,
+	null,
+	ttf
+);
+
+.icon {
+	i {
+		font-size: $size-4;
+	}
+
+	&.is-large {
+		i {
+			font-size: $size-1;
+		}
+	}
+
+	&.is-medium {
+		i {
+			font-size: $size-3;
+		}
+	}
+
+	&.is-small {
+		i {
+			font-size: $size-6;
+		}
+	}
+}
+
+i.icon-oklap:before,
+i.icon-invalidlap:before,
+i.icon-outlap:before,
+i.icon-outinlap:before,
+i.icon-esclap:before,
+i.icon-esclap2:before,
+i.icon-inlap:before {
+	position: relative;
+	top: rem(6px);
+}

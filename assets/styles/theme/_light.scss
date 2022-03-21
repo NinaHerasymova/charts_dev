@@ -1,0 +1,33 @@
+html.light {
+	--background-color: #{$background-color};
+	--background-color-rgb: 234, 234, 234;
+	--background-color-hsl: hsl(0, 0%, 92%);
+	--primary-color: #{$primary-color};
+	--primary-color-rgb: 21, 34, 63;
+	--primary-color-hsl: hsl(221, 50%, 16%);
+	--primary-color-darken: #{$primary-color-darken};
+	--secondary-color: #{$secondary-color};
+	--blue-color: #{$blue-color};
+	--red-color: #{$red-color};
+	--purple-color: #{$purple-color};
+	--table-striped-row-color: #{$table-striped-row-color};
+	--white-color: #{$white-color};
+	--black-color: #{$black-color};
+	--title-color: #{$title-color};
+	--subtitle-color: #{$subtitle-color};
+	--tag-color: #{$tag-color};
+	--tag-background-color: #{$tag-background-color};
+	--label-color: #{$label-color};
+	--input-color: #{$input-color};
+	--input-border-color: #{$input-border-color};
+	--input-icon-color: #{$input-icon-color};
+	--input-icon-active-color: #{$input-icon-active-color};
+	--input-background-color: #{$input-background-color};
+	--message-body-color: #{$white-color};
+	--input-focus-border-color: #{$input-focus-border-color};
+	--input-box-shadow-color: #{$blue-color};
+
+	.tag:not(body) {
+		color: #{$tag-color};
+	}
+}

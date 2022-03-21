@@ -1,0 +1,55 @@
+// utils
+
+.is-fullwidth {
+	width: 100%;
+}
+
+.is-spacebetween {
+	justify-content: space-between;
+}
+
+.is-centered {
+	justify-content: center;
+}
+
+.is-vcentered {
+	align-items: center;
+}
+
+.is-vtop {
+	align-items: flex-start;
+}
+
+.no-wrap {
+	white-space: nowrap;
+}
+
+.dropdown-item.wrap {
+	white-space: normal;
+}
+
+.full-width-font {
+	font-variant-numeric: tabular-nums lining-nums;
+}
+
+.pre-formatted {
+	white-space: pre;
+}
+
+.has-opacity {
+	opacity: 0.3;
+}
+
+.has-text-purple {
+	color: var(--purple-color);
+}
+
+.no-minheight {
+	min-height: auto !important;
+}
+
+.is-pointer {
+	&:hover {
+		cursor: pointer;
+	}
+}

@@ -1,0 +1,53 @@
+.field {
+	white-space: nowrap;
+	.switch {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		.switch {
+			&__input {
+				font-size: $size-4;
+				appearance: none;
+				width: $size-2;
+				height: $size-4;
+				background: rgba(var(--primary-color-rgb), 0.3);
+				border-radius: $size-1;
+				position: relative;
+				cursor: pointer;
+				outline: none;
+				transition: all 0.2s ease-in-out;
+
+				&:after {
+					position: absolute;
+					content: '';
+					width: $size-4;
+					height: $size-4;
+					border-radius: 50%;
+					background: white;
+					box-shadow: 0 0 0.25em rgba(var(--background-color-rgb), 0.3);
+					transform: scale(0.7);
+					left: 0;
+					transition: all 0.2s ease-in-out;
+				}
+
+				&:checked {
+					background: var(--primary-color);
+
+					&:after {
+						left: calc(100% - #{$size-4});
+					}
+				}
+				&#switchAxis{
+					background:var(--secondary-color);
+					margin: 0 20px;
+				}
+			}
+		}
+	}
+	&.switch-axis {
+		span {
+			line-height: 2;
+			font-weight: 400;
+		}
+	}
+}

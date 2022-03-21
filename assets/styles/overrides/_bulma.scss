@@ -1,0 +1,133 @@
+@import 'base/colors';
+@import '~bulma/sass/utilities/initial-variables';
+@import '~bulma/sass/utilities/functions';
+
+/* Variable changes go here */
+
+// Generic Variables
+$body-weight: 300;
+$hr-height: 1px;
+$label-weight: 500;
+$body-background-color: var(--background-color);
+$body-color: var(--black-color);
+
+// Colours
+$background: var(--background-color);
+$primary: var(--primary-color);
+$info: var(--blue-color);
+$danger: var(--red-color);
+$text: var(--primary-color);
+$text-strong: var(--primary-color);
+$grey-lighter: var(--secondary-color);
+
+$dropdown-item-active-background-color: var(--primary-color);
+$dropdown-item-active-color: var(--background-color);
+$hr-background-color: var(--background-color);
+
+//input
+$input-color: var(--input-color);
+$input-border-color: var(--input-border-color);
+$input-icon-color: var(--input-icon-color);
+$input-icon-active-color: var(--input-icon-active-color);
+$input-focus-border-color: var(--input-focus-border-color);
+$input-focus-box-shadow-color: var(--input-box-shadow-color);
+$input-background-color: var(--input-background-color);
+$input-disabled-background-color: var(--input-background-color);
+
+// navbar
+$navbar-background-color: var(--background-color);
+$navbar-item-color: var(--black-color);
+$navbar-item-hover-color: var(--blue-color);
+$navbar-item-active-color: var(--blue-color);
+
+$navbar-dropdown-background-color: var(--white-color);
+$navbar-dropdown-border-top: 0;
+$navbar-dropdown-radius: 8px;
+$navbar-dropdown-offset: 8px;
+$navbar-dropdown-item-hover-background-color: var(--blue-color);
+$navbar-dropdown-item-hover-color: var(--background-color);
+$navbar-dropdown-item-active-color: #fff;
+$navbar-dropdown-item-active-background-color: var(--primary-color) !important;
+
+//table
+$table-color: var(--black-color);
+$table-background-color: transparent;
+$table-head-cell-color: var(--black-color);
+$table-cell-border-width: 0px;
+$table-row-hover-background-color: var(--blue-color);
+$table-striped-row-even-background-color: var(--table-striped-row-color);
+$table-striped-row-even-hover-background-color: var(--blue-color);
+$table-head-cell-border-width: 0 0 1px;
+
+//button
+$button-focus-box-shadow-size: 0 0 0 0;
+
+//menu
+$menu-item-color: var(--primary-color);
+$menu-item-active-color: #fff;
+$menu-item-active-background-color: var(--primary-color);
+$menu-item-hover-color: #fff;
+$menu-item-hover-background-color: var(--blue-color);
+
+//dropdown
+$dropdown-item-color: var(--black-color);
+$dropdown-content-background-color: var(--white-color);
+$dropdown-item-active-color: #fff;
+$dropdown-item-hover-color: var(--black-color);
+
+//font-family
+$family-primary: 'Montserrat';
+
+//title
+$title-weight: 600;
+$title-color: var(--title-color);
+$subtitle-color: var(--subtitle-color);
+
+//breadcrumb
+$breadcrumb-item-color: var(--blue-color);
+$breadcrumb-item-active-color: var(--black-color);
+
+//message
+$message-background-color: var(--message-body-color);
+$message-header-background-color: var(--primary-color);
+$message-body-color: var(--black-color);
+$message-header-padding: 2em 3em;
+$message-body-padding: 3em;
+
+//menu
+$menu-item-color: var(--black-color);
+
+//pagination
+$pagination-active-color: var(--primary-color);
+$pagination-border-color: transparent;
+$pagination-current-background-color: var(--primary-color);
+$pagination-current-color: var(--background-color);
+$pagination-current-border-color: transparent;
+$pagination-hover-border-color: var(--primary-color);
+
+//content
+$content-heading-color: var(--black-color);
+$content-table-head-cell-color: var(--black-color);
+
+//form
+$label-color: var(--label-color);
+
+//tag
+$tag-color: var(--tag-color);
+
+//modal
+$modal-card-body-background-color: var(--background-color);
+$modal-card-title-color: var(--black-color);
+
+//tabs
+$tabs-link-active-color: var(--primary-color);
+$tabs-link-active-border-bottom-color: var(--primary-color);
+
+// Breakpoints
+$tablet: 724px;
+$desktop: 960px + (2 * $gap);
+$widescreen: 1152px + (2 * $gap);
+$fullhd: 1344px + (2 * $gap);
+
+/* Import the rest of Bulma */
+@import '~bulma';

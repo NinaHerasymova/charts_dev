@@ -1,0 +1,59 @@
+div.file-upload {
+	label.file-upload__button {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		padding: $size-6;
+		background-color: var(--blue-color);
+		color: var(--background-color);
+		border: 0;
+	}
+
+	.help.is-danger {
+		position: absolute;
+		width: 100%;
+		bottom: #{-$size-4};
+	}
+}
+
+nav.level {
+	.nameandcountry {
+		flex-direction: column;
+		align-items: start;
+	}
+}
+
+div.steam-account {
+	.media {
+		align-items: center;
+	}
+
+	a.link {
+		color: var(--primary-color);
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	button.button {
+		background: transparent;
+		border: 0;
+		color: var(--primary-color);
+		opacity: 0.5;
+		transition: opacity 0.3s;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+}
+
+.title-user__profile {
+	background: transparent;
+	border: 0;
+
+	&:focus {
+		outline: 0;
+	}
+}

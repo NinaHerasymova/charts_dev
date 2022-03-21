@@ -1,0 +1,42 @@
+.chart-column {
+	position: relative;
+}
+
+.stats {
+	position: absolute;
+	padding-left: 8px;
+	width: 220px;
+	top: 0.75rem;
+	right: 0;
+	font-size: 13px;
+	text-align: left;
+	&__label {
+		font-weight: 600;
+	}
+	&__item {
+		margin-bottom: 0!important;
+		padding-bottom: 1em;
+		&--divider {
+			padding-bottom: .5em;
+			position: relative;
+			&::after{
+				content: '';
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 150px;
+				border-bottom: 1px solid var(--secondary-color);
+			}
+			& + p {
+				padding-top: .5em;
+			}
+		}
+	}
+}
+
+.chart-wrapper{
+	width: calc(100% - 220px);
+	& > svg {
+		width: 100%!important;
+	}
+}

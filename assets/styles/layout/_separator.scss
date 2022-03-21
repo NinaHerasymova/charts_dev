@@ -1,0 +1,19 @@
+.separator {
+	display: flex;
+	align-items: center;
+	text-align: center;
+	margin: $size-5 0;
+	color: var(--background-color);
+}
+.separator::before,
+.separator::after {
+	content: '';
+	flex: 1;
+	border-bottom: rem(1px) solid var(--background-color);
+}
+.separator::before {
+	margin-right: $size-6;
+}
+.separator::after {
+	margin-left: $size-6;
+}

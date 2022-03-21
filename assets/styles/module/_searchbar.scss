@@ -1,0 +1,33 @@
+.searchbar {
+	min-height: rem(152px);
+
+	.field {
+		.switch {
+			.switch__input {
+				background: var(--background-color);
+				margin: 0 $size-6;
+				&:after {
+					background: var(--primary-color);
+					box-shadow: none;
+				}
+			}
+		}
+	}
+}
+
+.field {
+	&.search {
+		button.button:hover {
+			background: var(--primary-color-darken);
+			color: #fff;
+		}
+
+		span.icon {
+			opacity: 0.8;
+		}
+
+		.input:focus ~ .icon {
+			opacity: 1;
+		}
+	}
+}

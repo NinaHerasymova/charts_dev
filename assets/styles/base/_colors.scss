@@ -1,0 +1,22 @@
+// Add all colours necessary
+
+$background-color: #eaeaea;
+$primary-color: #15223f;
+$primary-color-darken: darken($primary-color, 5%);
+$secondary-color: #dbdbdb;
+$red-color: #f70f1c;
+$blue-color: #42c3fa;
+$purple-color: #892cdc;
+$table-striped-row-color: $secondary-color;
+$white-color: #fff;
+$black-color: #0a0a0a;
+$title-color: $primary-color;
+$subtitle-color: $primary-color;
+$tag-color: $primary-color;
+$tag-background-color: $background-color;
+$input-color: rgba($primary-color, 70%);
+$input-icon-color: $primary-color;
+$input-icon-active-color: $primary-color;
+$input-border-color: #eaeaea;
+$input-background-color: $white-color;
+$label-color: $primary-color;

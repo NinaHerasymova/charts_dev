@@ -1,0 +1,23 @@
+// All Overrides specific SASS Partials
+
+@import 'overrides/style';
+
+// All Base specific SASS Partials
+
+@import 'base/style';
+
+// All Layout specific SASS Partials
+
+@import 'layout/style';
+
+// All Module specific SASS Partials
+
+@import 'module/style';
+
+// All State specific SASS Partials
+
+@import 'state/style';
+
+// If we add different themes on feature, we can add overrides for different themes here
+
+@import 'theme/style';

@@ -1,0 +1,30 @@
+div.activitylist {
+	ul {
+		list-style: none;
+	}
+
+	li {
+		border-bottom: 1px solid var(--primary-color);
+		padding: $size-6 0;
+	}
+
+	.media {
+		align-items: center;
+
+		&-right {
+			align-self: start;
+		}
+	}
+
+	span.icon {
+		padding: 1rem;
+		border: 2px solid var(--primary-color);
+		border-radius: 1.25rem;
+	}
+
+	time {
+		color: rgba(var(--primary-color-rgb), 0.7);
+		font-weight: bolder;
+		font-size: $size-7;
+	}
+}

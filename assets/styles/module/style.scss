@@ -1,0 +1,26 @@
+/*
+*
+* Modules are individually separated and distinct UI Component.
+* It's independent of other UI Modules or layouts.
+*	Some very common examples are `accordion` , `modal` , `button` , `carousal` , etc.
+*
+*/
+
+@import 'logo';
+@import 'button';
+@import 'autocomplete';
+@import 'navbar';
+@import 'panel';
+@import 'profile';
+@import 'switch';
+@import 'notifications';
+@import 'searchbar';
+@import 'tooltip';
+@import 'loading';
+@import 'message';
+@import 'leftmenu';
+@import 'breadcrumb';
+@import 'tabs';
+@import 'tag';
+@import 'matrice';
+@import 'charts';

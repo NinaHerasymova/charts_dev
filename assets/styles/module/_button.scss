@@ -1,0 +1,46 @@
+button,
+a {
+	&.button {
+		&.is-blue {
+			color: var(--background-color);
+			background-color: var(--blue-color);
+
+			&.is-inverted {
+				border: 0;
+				background-color: transparent;
+				color: var(--blue-color);
+
+				&:hover {
+					span.icon {
+						opacity: 0.7;
+					}
+				}
+			}
+		}
+		&__steam {
+			background: transparent;
+			border: 0;
+			img {
+				width: rem(180px);
+				height: rem(35px);
+			}
+		}
+
+		&.is-transparent {
+			background-color: transparent;
+			border: 0;
+		}
+
+		&--anchor {
+			height: auto;
+		}
+
+		&.pr-025 {
+			padding-right: 0.25em;
+		}
+	}
+}
+
+.no-underline.no-underline a.link:not(.button):not(.tag):not(.dropdown-item) {
+	text-decoration: none;
+}

@@ -1,0 +1,19 @@
+.dropdown {
+	&--country {
+		width: 100%;
+
+		.dropdown-trigger {
+			width: 100%;
+		}
+
+		.dropdown-menu {
+			width: 100%;
+			max-height: 200px;
+			overflow-y: scroll;
+		}
+		.dropdown-item {
+			display: flex;
+			align-items: center;
+		}
+	}
+}

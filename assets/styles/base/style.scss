@@ -1,0 +1,15 @@
+/*
+*
+* All the CSS rulesets which are used to give default styling to HTML
+* elements in all occurences of the page, fall under the Base rules.
+* Dont user directly a class or an id, use the element or a child selector
+* along with any pseudo-classes
+*
+*/
+
+@import 'colors';
+@import 'utils';
+@import 'variables';
+@import 'mixins';
+@import 'typography';
+@import 'animations';

@@ -1,0 +1,70 @@
+$primary-color: #474747;
+$primary-color-darken: darken($primary-color, 5%);
+$background-color: #1d1d1d;
+$secondary-color: #6f6f6f;
+$message-body-color: lighten($background-color, 2%);
+$table-striped-row-color: lighten($background-color, 5%);
+$white-color: #171717;
+$black-color: #f3f3f3;
+$title-color: lighten($white-color, 70%);
+$subtitle-color: $title-color;
+$tag-color: $black-color;
+$tag-background-color: $table-striped-row-color;
+$input-color: $black-color;
+$input-focus-color: lighten($background-color, 90%);
+$input-background-color: lighten($background-color, 5%);
+$label-color: $black-color;
+$input-icon-color: $input-color;
+$input-border-color: lighten($background-color, 20%);
+$input-icon-active-color: $input-color;
+$blue-color: #5cddff;
+$red-color: #ff2936;
+$purple-color: #a346f6;
+$input-focus-border-color: var(--input-background-color);
+$input-focus-box-shadow-color: $secondary-color;
+
+html.dark {
+	--background-color: #{$background-color};
+	--background-color-rgb: 29, 29, 29;
+	--background-color-hsl: hsl(0, 0, 11);
+	--primary-color: #{$primary-color};
+	--primary-color-rgb: 64, 68, 75;
+	--primary-color-hsl: hsl(218.2, 7.9, 27.3);
+	--primary-color-darken: #{$primary-color-darken};
+	--secondary-color: #{$secondary-color};
+	--blue-color: #{$blue-color};
+	--red-color: #{$red-color};
+	--purple-color: #{$purple-color};
+	--table-striped-row-color: #{$table-striped-row-color};
+	--white-color: #{$white-color};
+	--black-color: #{$black-color};
+	--title-color: #{$title-color};
+	--subtitle-color: #{$subtitle-color};
+	--tag-color: #{$tag-color};
+	--tag-background-color: #{$tag-background-color};
+	--label-color: #{$label-color};
+	--input-color: #{$input-color};
+	--input-border-color: #{$input-border-color};
+	--input-icon-color: #{$input-icon-color};
+	--input-icon-active-color: #{$input-icon-active-color};
+	--input-background-color: #{$input-background-color};
+	--message-body-color: #{$message-body-color};
+	--input-focus-border-color: #{$input-focus-border-color};
+	--input-box-shadow-color: #{$input-focus-box-shadow-color};
+
+	.tag {
+		background-color: #{$secondary-color};
+
+		&.is-danger {
+			background-color: #{$red-color};
+		}
+
+		&.is-info {
+			background-color: #{$primary-color};
+		}
+	}
+
+	.searchbar .button.is-white.is-outlined {
+		border-color: #{$input-border-color};
+	}
+}
