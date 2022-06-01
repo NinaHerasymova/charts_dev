@@ -225,9 +225,11 @@ export default {
 			// eslint-disable-next-line no-undef
 			SciChart.SciChartSurface.configure({
 				dataUrl:
-					'https://cdn.jsdelivr.net/npm/scichart@2.0.2115/_wasm/scichart2d.data',
+					'https://cdn.jsdelivr.net/npm/scichart@2.2.2378/_wasm/scichart2d.data',
+				// 'https://cdn.jsdelivr.net/npm/scichart@2.0.2115/_wasm/scichart2d.data',
 				wasmUrl:
-					'https://cdn.jsdelivr.net/npm/scichart@2.0.2115/_wasm/scichart2d.wasm',
+					'https://cdn.jsdelivr.net/npm/scichart@2.2.2378/_wasm/scichart2d.wasm',
+				// 'https://cdn.jsdelivr.net/npm/scichart@2.0.2115/_wasm/scichart2d.wasm',
 			})
 			// eslint-disable-next-line no-undef
 			SciChart.SciChartSurface.setRuntimeLicenseKey(

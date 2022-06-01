@@ -1,21 +1,62 @@
-.chart-column {
-	position: relative;
+.chart {
+	&-column {
+		display: flex;
+		position: relative;
+	}
+	&-wrapper {
+		width: calc(100% - 220px);
+		max-width: 800px;
+		min-height: 600px;
+		@include until-fullhd {
+			min-height: 450px;
+		}
+		& > svg {
+			width: 100%!important;
+		}
+		&#tire_wear_per_lap_tire_age {
+			margin-bottom: 60px
+		}
+	}
+	&-message {
+		position: absolute;
+		right: 45%;
+		top: 50%;
+		font-size: 1.5rem;
+		color:  var(--red-color);
+	}
 }
 
 .stats {
-	position: absolute;
 	padding-left: 8px;
-	width: 220px;
-	top: 0.75rem;
-	right: 0;
+	padding-top: 10px;
+	width: 230px;
 	font-size: 13px;
 	text-align: left;
+	&--list {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 95%;
+		& .stats__item {
+			padding-bottom: 0;
+		}
+	}
 	&__label {
 		font-weight: 600;
 	}
+	&__block{
+		min-height: 25%;
+	}
 	&__item {
+		font-variant-numeric: tabular-nums lining-nums;
 		margin-bottom: 0!important;
-		padding-bottom: 1em;
+		padding-bottom: .7em;
+		display: flex;
+		justify-content: space-between;
+		gap: 8px;
+		.stats--corr &{
+			gap: 5px;
+		}
 		&--divider {
 			padding-bottom: .5em;
 			position: relative;
@@ -24,7 +65,7 @@
 				position: absolute;
 				bottom: 0;
 				left: 0;
-				width: 150px;
+				width: 200px;
 				border-bottom: 1px solid var(--secondary-color);
 			}
 			& + p {
@@ -32,11 +73,27 @@
 			}
 		}
 	}
-}
-
-.chart-wrapper{
-	width: calc(100% - 220px);
-	& > svg {
-		width: 100%!important;
+	&__value {
+		text-align: right;
+		flex-grow: 1;
 	}
+	&__units{
+		min-width: 52px;
+		.stats--corr &{
+			min-width: 36px;
+		}
+		&--small{
+			min-width: 30px;
+		}
+	}
+}
+.scichart__legend {
+	& > div {
+		color: var(--black-color)!important;
+		#brake_temps_lap_num & {
+			max-height: 57px;
+			overflow: hidden;
+		}
+	}
+
 }
