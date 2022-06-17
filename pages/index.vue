@@ -24,6 +24,18 @@
 				</div>
 			</div>
 		</div>
+		<div class="columns has-text-centered">
+			<div class="column chart-column">
+				<div class="chart-wrapper--multiple is-flex-grow-1">
+					<div v-for="divId in chartIds" :id="divId" :key="divId" />
+				</div>
+				<div class="stats">
+					<button @click="compareStints = !compareStints">
+						{{ compareStints ? 'Reset comparing' : 'Compare stints' }}
+					</button>
+				</div>
+			</div>
+		</div>
 	</section>
 </template>
 
@@ -33,6 +45,7 @@ import _, { sortBy } from 'lodash'
 export default {
 	data() {
 		return {
+			colorArr: ['#42c3fa', '#f70f1c', '#fabd38', '#06f906'],
 			chartsArr: [
 				{
 					order: 1,
@@ -161,6 +174,378 @@ export default {
 					lapTimeFormatted: null,
 				},
 			],
+			multiChartsArr: [
+				{
+					order: 1,
+					stintNumber: 3,
+					lapNumber: 2,
+					startTime: null,
+					startTimeFormatted: null,
+					startTimeMinutes: null,
+					endTime: null,
+					endTimeFormatted: null,
+					endTimeMinutes: null,
+					lapState: 'OK',
+					longAcc: 1.5316555867015282,
+					longBrk: 2.5036385056926327,
+					latLeft: 1.8481020290674175,
+					latRight: 2.4905386564077827,
+				},
+				{
+					order: 2,
+					stintNumber: 3,
+					lapNumber: 3,
+					startTime: null,
+					startTimeFormatted: null,
+					startTimeMinutes: null,
+					endTime: null,
+					endTimeFormatted: null,
+					endTimeMinutes: null,
+					lapState: 'OK',
+					longAcc: 1.4581659882805034,
+					longBrk: 1.8213310980529474,
+					latLeft: 1.9129652981850471,
+					latRight: 2.0756844959006275,
+				},
+				{
+					order: 3,
+					stintNumber: 3,
+					lapNumber: 4,
+					startTime: null,
+					startTimeFormatted: null,
+					startTimeMinutes: null,
+					endTime: null,
+					endTimeFormatted: null,
+					endTimeMinutes: null,
+					lapState: 'OK',
+					longAcc: 0.8057147112582923,
+					longBrk: 2.075583976100101,
+					latLeft: 1.8228917797528033,
+					latRight: 2.1087592044250925,
+				},
+				{
+					order: 4,
+					stintNumber: 3,
+					lapNumber: 5,
+					startTime: null,
+					startTimeFormatted: null,
+					startTimeMinutes: null,
+					endTime: null,
+					endTimeFormatted: null,
+					endTimeMinutes: null,
+					lapState: 'OK',
+					longAcc: 0.798191718005259,
+					longBrk: 1.806420725784535,
+					latLeft: 1.7070404737124505,
+					latRight: 2.163136333500573,
+				},
+				{
+					order: 5,
+					stintNumber: 3,
+					lapNumber: 6,
+					startTime: null,
+					startTimeFormatted: null,
+					startTimeMinutes: null,
+					endTime: null,
+					endTimeFormatted: null,
+					endTimeMinutes: null,
+					lapState: 'OK',
+					longAcc: 0.8834641521737724,
+					longBrk: 2.1048700408468917,
+					latLeft: 1.735247068570416,
+					latRight: 2.036673675132697,
+				},
+				{
+					order: 6,
+					stintNumber: 3,
+					lapNumber: 7,
+					startTime: null,
+					startTimeFormatted: null,
+					startTimeMinutes: null,
+					endTime: null,
+					endTimeFormatted: null,
+					endTimeMinutes: null,
+					lapState: 'OK',
+					longAcc: 0.9516600318154307,
+					longBrk: 2.0690212191427153,
+					latLeft: 1.6951227528361126,
+					latRight: 2.1041858451446624,
+				},
+				{
+					order: 7,
+					stintNumber: 3,
+					lapNumber: 8,
+					startTime: null,
+					startTimeFormatted: null,
+					startTimeMinutes: null,
+					endTime: null,
+					endTimeFormatted: null,
+					endTimeMinutes: null,
+					lapState: 'OK',
+					longAcc: 0.8685834303300801,
+					longBrk: 2.1204167792799518,
+					latLeft: 1.8229378594292533,
+					latRight: 1.9945405188199818,
+				},
+				{
+					order: 8,
+					stintNumber: 3,
+					lapNumber: 9,
+					startTime: null,
+					startTimeFormatted: null,
+					startTimeMinutes: null,
+					endTime: null,
+					endTimeFormatted: null,
+					endTimeMinutes: null,
+					lapState: 'OK',
+					longAcc: 0.9865559569192588,
+					longBrk: 2.0653628428047948,
+					latLeft: 1.7144468581640027,
+					latRight: 2.107061644698988,
+				},
+				{
+					order: 9,
+					stintNumber: 3,
+					lapNumber: 10,
+					startTime: null,
+					startTimeFormatted: null,
+					startTimeMinutes: null,
+					endTime: null,
+					endTimeFormatted: null,
+					endTimeMinutes: null,
+					lapState: 'OK',
+					longAcc: 1.0006620735689526,
+					longBrk: 2.1315900314595475,
+					latLeft: 1.7350098651726553,
+					latRight: 2.429677125267783,
+				},
+				{
+					order: 10,
+					stintNumber: 3,
+					lapNumber: 11,
+					startTime: null,
+					startTimeFormatted: null,
+					startTimeMinutes: null,
+					endTime: null,
+					endTimeFormatted: null,
+					endTimeMinutes: null,
+					lapState: 'OK',
+					longAcc: 0.7849602888848074,
+					longBrk: 1.6770406600532182,
+					latLeft: 1.8455641471403939,
+					latRight: 2.4498594402659313,
+				},
+				{
+					order: 11,
+					stintNumber: 3,
+					lapNumber: 12,
+					startTime: null,
+					startTimeFormatted: null,
+					startTimeMinutes: null,
+					endTime: null,
+					endTimeFormatted: null,
+					endTimeMinutes: null,
+					lapState: 'OK',
+					longAcc: 0.5533868748842758,
+					longBrk: 1.8050713884235035,
+					latLeft: 1.6839648605486668,
+					latRight: 1.8981076161795798,
+				},
+				{
+					order: 12,
+					stintNumber: 3,
+					lapNumber: 13,
+					startTime: null,
+					startTimeFormatted: null,
+					startTimeMinutes: null,
+					endTime: null,
+					endTimeFormatted: null,
+					endTimeMinutes: null,
+					lapState: 'OK',
+					longAcc: 0.7982529631448447,
+					longBrk: 2.009915382004173,
+					latLeft: 1.8329692300063511,
+					latRight: 2.19180411398107,
+				},
+				{
+					order: 13,
+					stintNumber: 3,
+					lapNumber: 14,
+					startTime: null,
+					startTimeFormatted: null,
+					startTimeMinutes: null,
+					endTime: null,
+					endTimeFormatted: null,
+					endTimeMinutes: null,
+					lapState: 'OK',
+					longAcc: 0.7927042993201392,
+					longBrk: 1.891441228557435,
+					latLeft: 2.0091641082919214,
+					latRight: 2.0831338491643967,
+				},
+				{
+					order: 14,
+					stintNumber: 3,
+					lapNumber: 15,
+					startTime: null,
+					startTimeFormatted: null,
+					startTimeMinutes: null,
+					endTime: null,
+					endTimeFormatted: null,
+					endTimeMinutes: null,
+					lapState: 'OK',
+					longAcc: 0.6232548440511316,
+					longBrk: 2.0342077319410596,
+					latLeft: 1.7803964021859668,
+					latRight: 2.2953669230143228,
+				},
+				{
+					order: 15,
+					stintNumber: 3,
+					lapNumber: 16,
+					startTime: null,
+					startTimeFormatted: null,
+					startTimeMinutes: null,
+					endTime: null,
+					endTimeFormatted: null,
+					endTimeMinutes: null,
+					lapState: 'OK',
+					longAcc: 0.6500025407983622,
+					longBrk: 1.9173166195308518,
+					latLeft: 1.7673994058498184,
+					latRight: 2.1636049074256576,
+				},
+				{
+					order: 16,
+					stintNumber: 4,
+					lapNumber: 2,
+					startTime: null,
+					startTimeFormatted: null,
+					startTimeMinutes: null,
+					endTime: null,
+					endTimeFormatted: null,
+					endTimeMinutes: null,
+					lapState: 'OK',
+					longAcc: 0.7539362231768842,
+					longBrk: 1.6858560715732709,
+					latLeft: 1.723026427289397,
+					latRight: 2.335939397627182,
+				},
+				{
+					order: 17,
+					stintNumber: 4,
+					lapNumber: 3,
+					startTime: null,
+					startTimeFormatted: null,
+					startTimeMinutes: null,
+					endTime: null,
+					endTimeFormatted: null,
+					endTimeMinutes: null,
+					lapState: 'OK',
+					longAcc: 0.9626223285142312,
+					longBrk: 1.8778148655011626,
+					latLeft: 1.911220881066434,
+					latRight: 2.117467679987138,
+				},
+				{
+					order: 18,
+					stintNumber: 4,
+					lapNumber: 4,
+					startTime: null,
+					startTimeFormatted: null,
+					startTimeMinutes: null,
+					endTime: null,
+					endTimeFormatted: null,
+					endTimeMinutes: null,
+					lapState: 'OK',
+					longAcc: 0.864245232942758,
+					longBrk: 1.9193826222395434,
+					latLeft: 1.8104304353517615,
+					latRight: 2.166216283520184,
+				},
+				{
+					order: 19,
+					stintNumber: 4,
+					lapNumber: 5,
+					startTime: null,
+					startTimeFormatted: null,
+					startTimeMinutes: null,
+					endTime: null,
+					endTimeFormatted: null,
+					endTimeMinutes: null,
+					lapState: 'OK',
+					longAcc: 0.7300441053664648,
+					longBrk: 1.9285392566801454,
+					latLeft: 1.9734055016505,
+					latRight: 2.230963284087108,
+				},
+				{
+					order: 20,
+					stintNumber: 4,
+					lapNumber: 6,
+					startTime: null,
+					startTimeFormatted: null,
+					startTimeMinutes: null,
+					endTime: null,
+					endTimeFormatted: null,
+					endTimeMinutes: null,
+					lapState: 'OK',
+					longAcc: 0.7368586965049564,
+					longBrk: 1.9025170718007374,
+					latLeft: 1.8603821656268913,
+					latRight: 2.98664839624994,
+				},
+				{
+					order: 21,
+					stintNumber: 4,
+					lapNumber: 7,
+					startTime: null,
+					startTimeFormatted: null,
+					startTimeMinutes: null,
+					endTime: null,
+					endTimeFormatted: null,
+					endTimeMinutes: null,
+					lapState: 'OK',
+					longAcc: 0.9877503343556877,
+					longBrk: 1.8322799791497435,
+					latLeft: 1.958721833613062,
+					latRight: 2.309465748575971,
+				},
+				{
+					order: 22,
+					stintNumber: 4,
+					lapNumber: 8,
+					startTime: null,
+					startTimeFormatted: null,
+					startTimeMinutes: null,
+					endTime: null,
+					endTimeFormatted: null,
+					endTimeMinutes: null,
+					lapState: 'OK',
+					longAcc: 1.2311984032058327,
+					longBrk: 2.025202752131813,
+					latLeft: 1.9087716587700487,
+					latRight: 2.7156979544325583,
+				},
+				{
+					order: 23,
+					stintNumber: 4,
+					lapNumber: 9,
+					startTime: null,
+					startTimeFormatted: null,
+					startTimeMinutes: null,
+					endTime: null,
+					endTimeFormatted: null,
+					endTimeMinutes: null,
+					lapState: 'OK',
+					longAcc: 0.7953357988176725,
+					longBrk: 2.3246006863561974,
+					latLeft: 1.9096846974224124,
+					latRight: 2.497199211159491,
+				},
+			],
+			chartIds: ['g-force_0', 'g-force_1', 'g-force_2', 'g-force_3'],
+			compareStints: false,
 			stat: {
 				min: 10,
 				avg: 14,
@@ -175,9 +560,13 @@ export default {
 			return {
 				fontSize: 14,
 				fontFamily: 'Montserrat',
-				color: this.$colorMode.preference === 'light' ? '#171717' : '#dbdbdb',
+				color: this.$colorMode.preference === 'light' ? '#171717' : '#eaeaea',
 				tooltipColor:
-					this.$colorMode.preference === 'light' ? '#ffffff' : '#171717',
+					this.$colorMode.preference === 'light' ? '#eaeaea' : '#171717',
+				dividerColor:
+					this.$colorMode.preference === 'light' ? 'grey' : '#eaeaea',
+				strokeColor:
+					this.$colorMode.preference === 'light' ? '#eaeaea' : 'grey',
 			}
 		},
 
@@ -193,9 +582,13 @@ export default {
 		generalXAxisState(val) {
 			this.initLapTimeChart('lap_time', val)
 		},
+		compareStints(val) {
+			this.initMaxGForceLapNumber()
+		},
 	},
 	async mounted() {
 		await this.initChart()
+		await this.initMaxGForceLapNumber()
 	},
 	methods: {
 		sortBy,
@@ -214,6 +607,7 @@ export default {
 		},
 
 		toggleGenXAxis() {
+			this.scs_lap.delete()
 			if (this.generalXAxisState !== 'time') {
 				this.generalXAxisState = 'time'
 			} else {
@@ -221,15 +615,93 @@ export default {
 			}
 		},
 
+		stintCompareProperties(arr, wasmContext) {
+			const {
+				XyDataSeries,
+				// eslint-disable-next-line no-undef
+			} = SciChart
+			// create dataSeries for primary data
+			const primaryDataSeries = new XyDataSeries(wasmContext, {
+				containsNaN: true,
+				dataSeriesName: `Stint 3`,
+			})
+
+			// create dataSeries for secondary data
+			const secondaryDataSeries = new XyDataSeries(wasmContext, {
+				containsNaN: true,
+				dataSeriesName: `Stint 4`,
+			})
+
+			const primaryArr = arr.filter((item) => item.stintNumber === 3)
+			const secondaryArr = arr.filter((item) => item.stintNumber === 4)
+
+			const dataArr = [primaryDataSeries, secondaryDataSeries]
+			return {
+				primaryDataSeries,
+				secondaryDataSeries,
+				primaryArr,
+				secondaryArr,
+				dataArr,
+			}
+		},
+
+		setScatterSeriesOption(index, yId, dataSeries, wasmContext, opacity = 1) {
+			const {
+				XyScatterRenderableSeries,
+				EllipsePointMarker,
+				// eslint-disable-next-line no-undef
+			} = SciChart
+
+			const scatterSeriesOptions = {
+				stroke: this.colorArr[index],
+				yAxisId: yId,
+				dataSeries,
+				pointMarker: new EllipsePointMarker(wasmContext, {
+					width: 5,
+					height: 5,
+					strokeThickness: 0,
+					fill: this.colorArr[index],
+					opacity,
+				}),
+			}
+			if (yId) {
+				scatterSeriesOptions.yAxisId = yId
+			}
+			return new XyScatterRenderableSeries(wasmContext, scatterSeriesOptions)
+		},
+
+		setTooltipOptions(lineSeries, xLabel, yLabel) {
+			lineSeries.rolloverModifierProps.tooltipColor =
+				this.chartAxisStyle.tooltipColor
+			lineSeries.rolloverModifierProps.tooltipTextColor =
+				this.chartAxisStyle.color
+			lineSeries.rolloverModifierProps.tooltipLabelX = xLabel
+			lineSeries.rolloverModifierProps.tooltipLabelY = yLabel
+		},
+
+		setLegendOptions(surface, placement = 'TopRight') {
+			const {
+				LegendModifier,
+				ELegendPlacement,
+				// eslint-disable-next-line no-undef
+			} = SciChart
+			surface.themeProvider.legendBackgroundBrush =
+				this.chartAxisStyle.tooltipColor
+			return new LegendModifier({
+				showCheckboxes: true,
+				showSeriesMarkers: true,
+				showLegend: true,
+				placement: ELegendPlacement[placement],
+			})
+		},
+
 		initChart() {
 			// eslint-disable-next-line no-undef
 			SciChart.SciChartSurface.configure({
 				dataUrl:
 					'https://cdn.jsdelivr.net/npm/scichart@2.2.2378/_wasm/scichart2d.data',
-				// 'https://cdn.jsdelivr.net/npm/scichart@2.0.2115/_wasm/scichart2d.data',
 				wasmUrl:
 					'https://cdn.jsdelivr.net/npm/scichart@2.2.2378/_wasm/scichart2d.wasm',
-				// 'https://cdn.jsdelivr.net/npm/scichart@2.0.2115/_wasm/scichart2d.wasm',
 			})
 			// eslint-disable-next-line no-undef
 			SciChart.SciChartSurface.setRuntimeLicenseKey(
@@ -242,6 +714,7 @@ export default {
 			const { sciChartSurface, wasmContext } =
 				// eslint-disable-next-line no-undef
 				await SciChart.SciChartSurface.create(id)
+			this.scs_lap = sciChartSurface
 
 			const {
 				NumericAxis,
@@ -371,6 +844,215 @@ export default {
 			sciChartSurface.chartModifiers.add(rolloverModifier)
 			sciChartSurface.chartModifiers.add(zoomPanModifier)
 			sciChartSurface.chartModifiers.add(mouseZoomModifier)
+		},
+
+		async initMaxGForceLapNumber() {
+			const {
+				NumericAxis,
+				XyDataSeries,
+				EAxisAlignment,
+				RolloverModifier,
+				ZoomPanModifier,
+				EXyDirection,
+				NumberRange,
+				ENumericFormat,
+				LineAnnotation,
+				ECoordinateMode,
+				EAutoRange,
+				SciChartVerticalGroup,
+				// eslint-disable-next-line no-undef
+			} = SciChart
+
+			const verticalGroup = new SciChartVerticalGroup()
+
+			const arr = this.multiChartsArr
+
+			const dataSeriesArr = [
+				{
+					title: 'Long Acc',
+					value: 'longAcc',
+				},
+				{
+					title: 'Long Brk',
+					value: 'longBrk',
+				},
+				{
+					title: 'Lat Left',
+					value: 'latLeft',
+				},
+				{
+					title: 'Lat Right',
+					value: 'latRight',
+				},
+			]
+
+			const chartsArr = []
+
+			const xAxisArr = []
+
+			for (let i = 0; i < dataSeriesArr.length; i++) {
+				if (this[`scs_g_force${i}`]) {
+					this[`scs_g_force${i}`].delete()
+				}
+				const drawChart = async () => {
+					const { sciChartSurface, wasmContext } =
+						// eslint-disable-next-line no-undef
+						await SciChart.SciChartSurface.createSingle(`g-force_${i}`)
+
+					this[`scs_g_force${i}`] = sciChartSurface
+
+					const xAxis = new NumericAxis(wasmContext, {
+						drawLabels: i === dataSeriesArr.length - 1,
+						axisTitle: i === dataSeriesArr.length - 1 ? 'Lap Number' : '',
+						axisTitleStyle: this.chartAxisStyle,
+						labelStyle: this.chartAxisStyle,
+						axisBandsFill: 'transparent',
+						autoRange: EAutoRange.Never,
+						minorDelta: 0.2,
+						autoTicks: false,
+						majorDelta: 1,
+						labelFormat: ENumericFormat.Decimal,
+						labelPrecision: 0,
+						visibleRange: new NumberRange(0, this.maxVisibleNumberX(arr)),
+						visibleRangeLimit: new NumberRange(0, arr.length + 1),
+					})
+
+					xAxisArr.push(xAxis)
+
+					xAxis.visibleRangeChanged.subscribe((data) => {
+						xAxisArr.forEach((item) => (item.visibleRange = data.visibleRange))
+					})
+
+					const yAxis = new NumericAxis(wasmContext, {
+						axisTitle: dataSeriesArr[i].title,
+						axisTitleStyle: this.chartAxisStyle,
+						autoRange: EAutoRange.Never,
+						majorDelta: 1,
+						minorDelta: 0.5,
+						autoTicks: false,
+						labelStyle: this.chartAxisStyle,
+						axisBandsFill: 'transparent',
+						visibleRange: new NumberRange(-0.2, 10),
+						visibleRangeLimit: new NumberRange(0, 10),
+						axisAlignment: EAxisAlignment.Left,
+						id: `yAxis${i + 1}`,
+						minorsPerMajor: 1,
+						cursorLabelFormat: ENumericFormat.Decimal,
+						cursorLabelPrecision: 2,
+						axisBorder: {
+							borderTop: 10,
+							borderBottom: 10,
+						},
+					})
+
+					sciChartSurface.annotations.add(
+						new LineAnnotation({
+							stroke: this.chartAxisStyle.dividerColor,
+							strokeThickness: 1,
+							xCoordinateMode: ECoordinateMode.Relative,
+							x1: 0,
+							x2: 1,
+							yCoordinateMode: ECoordinateMode.DataValue,
+							y1: 0,
+							y2: 0,
+							yAxisId: `yAxis${i + 1}`,
+						})
+					)
+
+					sciChartSurface.xAxes.add(xAxis)
+					sciChartSurface.yAxes.add(yAxis)
+
+					if (this.compareStints) {
+						const {
+							primaryDataSeries,
+							secondaryDataSeries,
+							primaryArr,
+							secondaryArr,
+							dataArr,
+						} = this.stintCompareProperties(arr, wasmContext)
+
+						for (let j = 0; j < primaryArr.length; j++) {
+							primaryDataSeries.append(
+								primaryArr[j].lapNumber,
+								primaryArr[j][dataSeriesArr[i].value] === null ||
+									primaryArr[j][dataSeriesArr[i].value] > 10
+									? NaN
+									: primaryArr[j][dataSeriesArr[i].value]
+							)
+						}
+						for (let j = 0; j < secondaryArr.length; j++) {
+							secondaryDataSeries.append(
+								secondaryArr[j].lapNumber,
+								secondaryArr[j][dataSeriesArr[i].value] === null ||
+									secondaryArr[j][dataSeriesArr[i].value] > 10
+									? NaN
+									: secondaryArr[j][dataSeriesArr[i].value]
+							)
+						}
+
+						for (let k = 0; k < dataArr.length; k++) {
+							const lineSeries = this.setScatterSeriesOption(
+								k,
+								`yAxis${i + 1}`,
+								dataArr[k],
+								wasmContext
+							)
+
+							this.setTooltipOptions(lineSeries, 'Lap', '; Max G-Force')
+
+							sciChartSurface.renderableSeries.add(lineSeries)
+						}
+
+						const legend = this.setLegendOptions(sciChartSurface)
+
+						sciChartSurface.chartModifiers.add(legend)
+					} else {
+						const dataSeries = new XyDataSeries(wasmContext, {
+							dataSeriesName: dataSeriesArr[i].title,
+						})
+
+						for (let j = 0; j < arr.length; j++) {
+							dataSeries.append(
+								arr[j].order,
+								arr[j][dataSeriesArr[i].value] === null ||
+									arr[j][dataSeriesArr[i].value] > 10
+									? NaN
+									: arr[j][dataSeriesArr[i].value]
+							)
+						}
+						const lineSeries = this.setScatterSeriesOption(
+							0,
+							`yAxis${i + 1}`,
+							dataSeries,
+							wasmContext
+						)
+
+						this.setTooltipOptions(lineSeries, 'Lap', '; Max G-Force')
+
+						sciChartSurface.renderableSeries.add(lineSeries)
+					}
+
+					const rolloverModifier = new RolloverModifier({
+						rolloverLineStroke: this.chartAxisStyle.dividerColor,
+						modifierGroup: 'first',
+					})
+
+					const zoomPanModifier = new ZoomPanModifier({
+						xyDirection: EXyDirection.XDirection,
+					})
+
+					sciChartSurface.chartModifiers.add(rolloverModifier)
+					if (arr.length > 10) {
+						sciChartSurface.chartModifiers.add(zoomPanModifier)
+					}
+
+					verticalGroup.addSurfaceToGroup(sciChartSurface)
+
+					return { wasmContext, sciChartSurface }
+				}
+				chartsArr.push(drawChart())
+			}
+			return await Promise.all(chartsArr)
 		},
 	},
 }

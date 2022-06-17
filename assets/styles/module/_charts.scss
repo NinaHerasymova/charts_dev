@@ -5,16 +5,30 @@
 	}
 	&-wrapper {
 		width: calc(100% - 220px);
-		max-width: 800px;
 		min-height: 600px;
+		&--multiple {
+			height: 600px;
+			& > div {
+				height: calc((600px - 60px)/4);
+				&:last-child {
+					height: calc((600px - 60px)/4 + 40px);
+				}
+				@include until-fullhd {
+					height: calc((450px - 40px)/4);
+					&:last-child {
+						height: calc((450px - 40px)/4 + 50px);
+					}
+				}
+			}
+		}
 		@include until-fullhd {
 			min-height: 450px;
+			&--multiple {
+				height: 450px;
+			}
 		}
 		& > svg {
 			width: 100%!important;
-		}
-		&#tire_wear_per_lap_tire_age {
-			margin-bottom: 60px
 		}
 	}
 	&-message {
