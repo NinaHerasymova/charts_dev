@@ -6466,14 +6466,6 @@ export default {
 
 			// here we build the data series for each stint
 			stints.forEach((stint) => {
-				// format the time which we receive from API to the readable time in minutes for the tooltip
-				yAxis.labelProvider.formatCursorLabel = (dataValue) => {
-					return this.msToLapTime(
-						arr.find((x) => x.lapTime === dataValue).lapTime,
-						this.$dateFns
-					)
-				}
-
 				const xyDataSeries = new XyDataSeries(wasmContext)
 
 				// append the X and Y datapoints
@@ -6608,7 +6600,6 @@ export default {
 				showAxisLabels: false,
 				tooltipDataTemplate: customTemplate,
 			})
-
 			cursorModifier.hitTestRenderableSeries = (rs, mousePoint) => {
 				return rs.hitTestProvider.hitTestDataPoint(
 					mousePoint.x,
