@@ -6951,6 +6951,8 @@ export default {
 				EAutoRange,
 				SeriesSelectionModifier,
 				CursorModifier,
+				parseColorToUIntArgb,
+				EStrokePaletteMode,
 				// eslint-disable-next-line no-undef
 			} = SciChart
 
@@ -7050,23 +7052,41 @@ export default {
 					xyDataSeries,
 					wasmContext,
 					{
-						strokeThickness: 1,
+						strokeThickness: 0,
 						onHoveredChanged: (sourceSeries, isHovered) => {
-							sourceSeries.strokeThickness = isHovered ? 1 : 1
+							sourceSeries.strokeThickness = isHovered ? 1 : 0
 						},
 					}
 				)
+
+				lineSeries.paletteProvider.overrideStrokeArgb = (
+					xValue,
+					yValue,
+					index,
+					opacity,
+					metadata
+				) => {
+					return metadata
+						? metadata === 1
+							? parseColorToUIntArgb('#42c3fa')
+							: parseColorToUIntArgb('#f70f1c')
+						: undefined
+				}
+
 				lineSeries.paletteProvider.overridePointMarkerArgb = (
 					xValue,
 					yValue,
 					index,
+					opacity,
 					metadata
 				) => {
-					console.log(metadata)
-					// outputs 1 to the dev tools console
-					return metadata === 1 ? '0x33CCFF' : '0xFF0033'
+					return metadata
+						? metadata === 1
+							? parseColorToUIntArgb('#42c3fa')
+							: parseColorToUIntArgb('#f70f1c')
+						: undefined
 				}
-
+				lineSeries.paletteProvider.strokePaletteMode = EStrokePaletteMode.SOLID
 				sciChartSurface.renderableSeries.add(lineSeries)
 			})
 
