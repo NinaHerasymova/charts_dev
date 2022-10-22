@@ -209,6 +209,56 @@ export default {
 				}
 			})
 		},
+		getHighlightedValue(point) {
+			let highlightedPoint
+			if (point.isHighlighted2) {
+				highlightedPoint = 2
+			} else if (point.isHighlighted1) {
+				highlightedPoint = 1
+			}
+			return highlightedPoint
+		},
+		setHighlightedColors(lineSeries) {
+			const {
+				parseColorToUIntArgb,
+				EStrokePaletteMode,
+				// eslint-disable-next-line no-undef
+			} = SciChart
+
+			const red = parseColorToUIntArgb('#f70f1c')
+			const blue = parseColorToUIntArgb('#42c3fa')
+
+			lineSeries.paletteProvider.overridePointMarkerArgb = (
+				xValue,
+				yValue,
+				index,
+				opacity,
+				metadata
+			) => {
+				return metadata
+					? metadata === 1
+						? {
+								stroke: blue,
+								fill: blue,
+						  }
+						: {
+								stroke: red,
+								fill: red,
+						  }
+					: undefined
+			}
+			lineSeries.paletteProvider.overrideStrokeArgb = (
+				xValue,
+				yValue,
+				index,
+				opacity,
+				metadata
+			) => {
+				return metadata ? (metadata === 1 ? blue : red) : undefined
+			}
+
+			lineSeries.paletteProvider.strokePaletteMode = EStrokePaletteMode.SOLID
+		},
 	},
 }
 </script>
