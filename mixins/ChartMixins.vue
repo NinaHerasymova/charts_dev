@@ -235,8 +235,8 @@ export default {
 				opacity,
 				metadata
 			) => {
-				return metadata
-					? metadata === 1
+				return metadata.highlight
+					? metadata.highlight === 1
 						? {
 								stroke: blue,
 								fill: blue,
@@ -254,7 +254,11 @@ export default {
 				opacity,
 				metadata
 			) => {
-				return metadata ? (metadata === 1 ? blue : red) : undefined
+				return metadata.highlight
+					? metadata.highlight === 1
+						? blue
+						: red
+					: undefined
 			}
 
 			lineSeries.paletteProvider.strokePaletteMode = EStrokePaletteMode.SOLID

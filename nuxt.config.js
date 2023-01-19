@@ -16,6 +16,7 @@ export default {
 		link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
 		script: [
 			{
+				// src: 'https://cdn.jsdelivr.net/npm/scichart@3.0.266/_wasm/scichart.browser.js',
 				src: 'https://cdn.jsdelivr.net/npm/scichart@2.2.2415/_wasm/scichart.browser.js',
 			},
 		],
